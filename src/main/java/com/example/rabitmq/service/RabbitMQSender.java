@@ -13,10 +13,10 @@ public class RabbitMQSender {
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
-    @Value("${rabbitmq.exchange}")
+    @Value("${rabbitmq.direct.exchange}")
     private String exchange;
 
-    @Value("${rabbitmq.routingKey}")
+    @Value("${rabbitmq.direct.routingKey}")
     private String routingKey;
 
     public void send(Order order) {

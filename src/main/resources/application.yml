@@ -9,6 +9,22 @@ spring:
     password: guest
 
 rabbitmq:
-  queue : order-queue
-  exchange : order-exchange
-  routingKey: order
+  direct:
+    queue : order-direct-queue
+    exchange : order-direct-exchange
+    routingKey: order
+  fanout:
+    queue1 : order-fanout-queue1
+    queue2 : order-fanout-queue2
+    exchange : order-fanout-exchange
+  topic:
+    queue : order-topic-queue
+    allqueue : order-topic-all-queue
+    exchange : order-topic-exchange
+    routingKey: queue.order
+    routingAllKey: queue.*
+  header:
+    queue : order-header-queue
+    exchange : order-header-exchange
+    matchKey : key
+    matchValue : order

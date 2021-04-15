@@ -1,5 +1,7 @@
 # rabbitmq
 
+Reference - https://www.javainuse.com/messaging/rabbitmq/exchange
+
 ## RabbitMQ server
 rabbitmq server credentials can be found in application.yml file.
 
@@ -8,23 +10,27 @@ Start rabbitmq server in docker
 docker-compose up
 ``
 
-## How to run
+### How to run using different exchange types
 
-POST - http://localhost:9001/api/v1/orders/producer
+Direct exchange - POST - http://localhost:9001/api/v1/orders/direct/producer  
 
-Send Order data
+Fanout exchange - POST - http://localhost:9001/api/v1/orders/fanout/producer  
+
+Topic exchange - POST - http://localhost:9001/api/v1/orders/topic/producer  
+
+Header exchange - POST - http://localhost:9001/api/v1/orders/header/producer  
 
 Body 
 
 ```
 {
-    "orderId": "order4",
+    "orderId": "order",
     "itemName": "pen",
-    "quantity": 4
+    "quantity": 2
 }
 ```
 
-GET - http://localhost:9002/api/v1/orders/consumer
+Received Orders   
 
-Received Orders
+GET - http://localhost:9002/api/v1/orders/consumer
 
