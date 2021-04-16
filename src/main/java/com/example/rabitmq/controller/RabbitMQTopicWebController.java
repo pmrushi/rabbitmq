@@ -23,8 +23,8 @@ public class RabbitMQTopicWebController {
     private RabbitTemplate rabbitTemplate;
 
     @PostMapping(value = "/producer")
-    public String producer(@RequestBody Order order) {
+    public Order producer(@RequestBody Order order) {
         rabbitTemplate.convertAndSend(exchange, routingKey, order);
-        return "Order sent Successfully to topic-exchange : " + order.toString();
+        return order;
     }
 }

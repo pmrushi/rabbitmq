@@ -20,8 +20,8 @@ public class RabbitMQFanoutWebController {
     private RabbitTemplate rabbitTemplate;
 
     @PostMapping(value = "/producer")
-    public String producer(@RequestBody Order order) {
+    public Order producer(@RequestBody Order order) {
         rabbitTemplate.convertAndSend(exchange, "", order);
-        return "Order sent Successfully to fanout-exchange : " + order.toString();
+        return order;
     }
 }

@@ -31,12 +31,12 @@ public class RabbitMQHeaderWebController {
     private RabbitTemplate rabbitTemplate;
 
     @PostMapping(value = "/producer")
-    public String producer(@RequestBody Order order) {
+    public Order producer(@RequestBody Order order) {
         MessageProperties messageProperties = new MessageProperties();
         messageProperties.setHeader(matchKey, matchValue);
         MessageConverter messageConverter = new Jackson2JsonMessageConverter();
         Message message = messageConverter.toMessage(order, messageProperties);
         rabbitTemplate.convertAndSend(exchange, "", message);
-        return "Order sent Successfully to order-header-exchange : " + order.toString();
+        return order;
     }
 }
