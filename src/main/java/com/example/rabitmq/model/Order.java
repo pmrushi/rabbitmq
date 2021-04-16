@@ -11,6 +11,9 @@ public class Order {
     public String itemName;
     public int quantity;
 
+    public Order() {
+    }
+
     public Order(String orderId, String itemName, int quantity) {
         this.orderId = orderId;
         this.itemName = itemName;
