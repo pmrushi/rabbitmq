@@ -1,7 +1,7 @@
-package com.example.rabitmq.controller;
+package com.example.rabbitmq.controller;
 
-import com.example.rabitmq.model.Order;
-import com.example.rabitmq.service.RabbitMQConsumer;
+import com.example.rabbitmq.model.Order;
+import com.example.rabbitmq.service.RabbitMQConsumer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

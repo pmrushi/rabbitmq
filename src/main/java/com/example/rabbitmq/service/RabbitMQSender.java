@@ -1,6 +1,6 @@
-package com.example.rabitmq.service;
+package com.example.rabbitmq.service;
 
-import com.example.rabitmq.model.Order;
+import com.example.rabbitmq.model.Order;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

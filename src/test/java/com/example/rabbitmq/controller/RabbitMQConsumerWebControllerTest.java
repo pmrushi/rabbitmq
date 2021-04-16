@@ -1,4 +1,4 @@
-package com.example.rabitmq.controller;
+package com.example.rabbitmq.controller;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,6 @@
-package com.example.rabitmq.controller;
+package com.example.rabbitmq.controller;
 
-import com.example.rabitmq.model.Order;
+import com.example.rabbitmq.model.Order;
 import org.junit.jupiter.api.Test;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-class RabbitMQHeaderWebControllerTest {
+class RabbitMQFanoutWebControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -27,9 +27,9 @@ class RabbitMQHeaderWebControllerTest {
     private RabbitTemplate rabbitTemplate;
 
     @Test
-    public void shouldTestHeaderExchangeProducerAPI() throws Exception {
+    public void shouldTestFanoutExchangeProducerAPI() throws Exception {
         Order order = new Order("order1", "pen", 2);
-        this.mockMvc.perform(post("/api/v1/orders/header/producer")
+        this.mockMvc.perform(post("/api/v1/orders/fanout/producer")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(order.toJson())
                 .accept(MediaType.APPLICATION_JSON))

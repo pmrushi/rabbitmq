@@ -1,4 +1,4 @@
-package com.example.rabitmq.model;
+package com.example.rabbitmq.model;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
