@@ -1,6 +1,10 @@
 # rabbitmq
 
-Reference - https://www.javainuse.com/messaging/rabbitmq/exchange
+Reference : 
+
+https://www.rabbitmq.com/tutorials/amqp-concepts.html
+
+https://www.javainuse.com/messaging/rabbitmq/exchange
 
 ## RabbitMQ server
 rabbitmq server credentials can be found in application.yml file.
