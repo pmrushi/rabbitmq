@@ -1,5 +1,7 @@
 # rabbitmq
 
+Author : pmrushi@gmail.com
+
 Reference : 
 
 https://www.rabbitmq.com/tutorials/amqp-concepts.html
