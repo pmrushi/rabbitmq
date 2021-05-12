@@ -1,7 +1,5 @@
 # rabbitmq
 
-Author : pmrushi@gmail.com
-
 Reference : 
 
 https://www.rabbitmq.com/tutorials/amqp-concepts.html
@@ -18,6 +16,8 @@ docker-compose up
 ``
 
 ### How to run using different exchange types
+
+Import [PostMan collection file](RabbitMQ.postman_collection.json) and can test APIs.
 
 Direct exchange - POST - http://localhost:9001/api/v1/orders/direct/producer  
 
@@ -39,5 +39,5 @@ Body
 
 Received Orders   
 
-GET - http://localhost:9002/api/v1/orders/consumer
+GET - http://localhost:9001/api/v1/orders/consumer
 

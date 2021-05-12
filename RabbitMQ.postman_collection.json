@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "176163c8-0b56-422f-83b4-249f3bfb1b36",
+		"name": "RabbitMQ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Direct Exchange",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"orderId\": \"order\",\n    \"itemName\": \"pen\",\n    \"quantity\": 2\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9001/api/v1/orders/direct/producer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"direct",
+						"producer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fanout Exchange",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"orderId\": \"order\",\n    \"itemName\": \"pen\",\n    \"quantity\": 2\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9001/api/v1/orders/fanout/producer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"fanout",
+						"producer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Topic Exchange",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"orderId\": \"order\",\n    \"itemName\": \"pen\",\n    \"quantity\": 2\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9001/api/v1/orders/fanout/producer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"fanout",
+						"producer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Header Exchange",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"orderId\": \"order\",\n    \"itemName\": \"pen\",\n    \"quantity\": 2\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9001/api/v1/orders/header/producer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"header",
+						"producer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Receive Message",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9001/api/v1/orders/consumer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"consumer"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
