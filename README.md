@@ -11,7 +11,8 @@ https://www.javainuse.com/messaging/rabbitmq/exchange
 ## RabbitMQ server
 rabbitmq server credentials can be found in application.yml file.
 
-Start rabbitmq server in docker  
+Start rabbitmq server in docker using [docker compose](docker-compose.yml)
+
 ``
 docker-compose up
 ``
