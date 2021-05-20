@@ -27,7 +27,7 @@ class RabbitMQFanoutWebControllerTest {
     private RabbitTemplate rabbitTemplate;
 
     @Test
-    public void shouldTestFanoutExchangeProducerAPI() throws Exception {
+    void shouldTestFanoutExchangeProducerAPI() throws Exception {
         Order order = new Order("order1", "pen", 2);
         this.mockMvc.perform(post("/api/v1/orders/fanout/producer")
                 .contentType(MediaType.APPLICATION_JSON)

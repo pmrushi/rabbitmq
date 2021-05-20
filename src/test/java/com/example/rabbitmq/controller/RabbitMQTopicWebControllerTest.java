@@ -27,7 +27,7 @@ class RabbitMQTopicWebControllerTest {
     private RabbitTemplate rabbitTemplate;
 
     @Test
-    public void shouldTestTopicExchangeProducerAPI() throws Exception {
+    void shouldTestTopicExchangeProducerAPI() throws Exception {
         Order order = new Order("order1", "pen", 2);
         this.mockMvc.perform(post("/api/v1/orders/topic/producer")
                 .contentType(MediaType.APPLICATION_JSON)

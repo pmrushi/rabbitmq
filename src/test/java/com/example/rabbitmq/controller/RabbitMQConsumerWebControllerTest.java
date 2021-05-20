@@ -20,7 +20,7 @@ class RabbitMQConsumerWebControllerTest {
     private MockMvc mockMvc;
 
     @Test
-    public void shouldTestConsumerAPI() throws Exception {
+    void shouldTestConsumerAPI() throws Exception {
         this.mockMvc.perform(get("/api/v1/orders/consumer"))
                 .andDo(print())
                 .andExpect(status().isOk())
