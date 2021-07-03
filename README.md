@@ -76,7 +76,7 @@ Create a project key in SoncaQube and generate and use in below command.
 ./gradlew sonarqube \
   -Dsonar.projectKey=rabbitmq \
   -Dsonar.host.url=http://localhost:9000 \
-  -Dsonar.login=5214377ebc06cb353393987d84d61f7b456fc343
+  -Dsonar.login=65ed680b57e16ea9964cd221f4a6a1afcb5d023e
 ```
 
 
