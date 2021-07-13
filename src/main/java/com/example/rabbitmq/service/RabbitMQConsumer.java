@@ -10,18 +10,19 @@ import java.util.List;
 @Service
 public class RabbitMQConsumer {
 
+    public static final String RECEIVED_ORDER = "Received Order : ";
     private List<Order> orders = new ArrayList<>();
 
     @RabbitListener(queues = "${rabbitmq.direct.queue}")
     public void receivedDirectQueueMessage(Order order) {
         orders.add(order);
-        System.out.println("Received Order : " + order.toString());
+        System.out.println(RECEIVED_ORDER + order.toString());
     }
 
     @RabbitListener(queues = "${rabbitmq.fanout.queue1}")
     public void receivedFanoutQueue1Message(Order order) {
         orders.add(order);
-        System.out.println("Received Order : " + order.toString());
+        System.out.println(RECEIVED_ORDER + order.toString());
     }
 
     @RabbitListener(queues = "${rabbitmq.fanout.queue2}")

@@ -1,40 +1,31 @@
 package com.example.rabbitmq.controller;
 
 import com.example.rabbitmq.model.Order;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.http.MediaType;
-import org.springframework.test.web.servlet.MockMvc;
 
-import static org.hamcrest.Matchers.containsString;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.verify;
 
-@SpringBootTest
-@AutoConfigureMockMvc
+@ExtendWith(MockitoExtension.class)
 class RabbitMQDirectWebControllerTest {
 
-    @Autowired
-    private MockMvc mockMvc;
+    @Mock
+    RabbitTemplate rabbitTemplate;
 
-    @MockBean
-    private RabbitTemplate rabbitTemplate;
+    @InjectMocks
+    private RabbitMQDirectWebController rabbitMQDirectWebController;
 
     @Test
-    void shouldTestDirectExchangeProducerAPI() throws Exception {
-        Order order = new Order("order1", "pen", 2);
-        this.mockMvc.perform(post("/api/v1/orders/direct/producer")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(order.toJson())
-                .accept(MediaType.APPLICATION_JSON))
-                .andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(content().string(containsString(order.toJson())));
+    void producer() {
+        Order order = new Order();
+        doNothing().when(rabbitTemplate).convertAndSend(null, null, order);
+        Assertions.assertEquals(rabbitMQDirectWebController.producer(order), order);
+        verify(rabbitTemplate).convertAndSend(null, null, order);
     }
 }
